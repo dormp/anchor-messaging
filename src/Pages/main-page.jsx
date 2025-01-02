@@ -24,6 +24,7 @@ const MainPage = () => {
     const [activeFilters, setActiveFilters] = useState({});
     const [chatSize, setChatSize] = useState(100);
 
+    
     // Message Organization
     const messagesByContact = useMemo(() => {
         return allMessages.reduce((acc, msg) => {
