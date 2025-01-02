@@ -1,20 +1,18 @@
 // Express.js backend server for sending/receiving messages and contacts (only for facebook so far)
 
-// Imports
-import express from 'express';          
-import bodyParser from 'body-parser';   
+import express from 'express'; 
+import dotenv from 'dotenv';          
 import axios from 'axios';              
-import cors from 'cors';                
-import dotenv from 'dotenv';            
+import cors from 'cors';                          
 
-// Load environment variables from .env file
 dotenv.config();
 
 const app = express();
+
 const VERIFY_TOKEN = process.env.VITE_FACEBOOK_VERIFY_TOKEN;
 const PAGE_ACCESS_TOKEN = process.env.VITE_FACEBOOK_PAGE_ACCESS_TOKEN;
 
-// Middleware
+// Cors for security
 app.use(cors({
     origin: process.env.FRONTEND_URL || 'http://localhost:5173',
     methods: ['GET', 'POST', 'OPTIONS'],
@@ -25,16 +23,16 @@ app.options('*', cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Global error handling middleware
+// error catcher
 const errorHandler = (err, req, res, next) => {
     console.error('Unexpected Error:', err);
     res.status(500).json({
-        error: 'An unexpected error occurred',
+        error: 'Something went wrong!',
         details: process.env.NODE_ENV === 'development' ? err.message : null
     });
 };
 
-// In-memory storage only for demo purposes - replace with better storage later
+// in memory storage for demo purposes - replace with better storage later
 let FACEBOOK_CONTACTS = [];
 let MESSAGES = []; 
 
@@ -86,7 +84,7 @@ app.get('/webhook', (req, res) => {
     }
 });
 
-// Webhook Message Handler
+// webhook Message Handler
 app.post('/webhook', (req, res) => {
     const body = req.body;
 
@@ -96,7 +94,7 @@ app.post('/webhook', (req, res) => {
             const senderId = webhookEvent.sender.id;
             const messageText = webhookEvent.message?.text;
 
-            // Store new messages in the in-memory storage
+            // Store new messages in the in memory storage
             if (messageText) {
                 const newMessage = {
                     id: Date.now().toString(),

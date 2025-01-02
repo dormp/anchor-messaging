@@ -1,7 +1,6 @@
 // Chat header components for messenger header and settings
 // has settings modal, contact info modal, and main header with search
 
-// Imports
 import React, { useState, useMemo } from 'react';
 import { X, Settings, Info, Search } from 'lucide-react';
 import facebookMessengerLogo from '../assets/facebookmessagerlogo.png';
@@ -122,7 +121,6 @@ const ChatHeader = ({
                 alignItems: 'center',
                 padding: '10px 15px'
             }}>
-                {/* Contact profile */}
                 <div style={{
                     display: 'flex', 
                     alignItems: 'center', 
@@ -158,7 +156,7 @@ const ChatHeader = ({
                     </div>
                 </div>
                 
-                {/* Search section */}
+                {/* Searching section */}
                 <div style={{
                     display: 'flex', 
                     alignItems: 'center', 
@@ -230,7 +228,7 @@ const ChatHeader = ({
                 </div>
             </div>
 
-            {/* Modals */}
+
             <ChatSettingsModal 
                 isOpen={showChatSettings}
                 onClose={() => setShowChatSettings(false)}

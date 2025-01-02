@@ -1,6 +1,5 @@
 // Reusable Button component resource
 
-// Imports
 import React from 'react';
 
 const Button = ({ text, onClick, style }) => {

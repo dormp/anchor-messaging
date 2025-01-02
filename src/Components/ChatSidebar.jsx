@@ -2,7 +2,6 @@
 // has search, filtering, and individual chat components
 
 
-// Imports
 import React, { useMemo } from 'react';
 import { Search, Filter, Plus } from 'lucide-react';
 import facebookMessengerLogo from '../assets/facebookmessagerlogo.png';

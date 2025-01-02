@@ -1,6 +1,5 @@
 // ChatFilterModal component for filtering chat conversations based on keywords
 
-// Imports
 import React, { useState } from 'react';
 import * as styles from '../Pages/MainPageStyles';
 
