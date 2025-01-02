@@ -1,6 +1,5 @@
 // login compoment seen in the starter/landing page
 
-// Imports
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
@@ -15,7 +14,7 @@ const LoginForm = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        // login validation
+        // login validation with demo user
         if (email === 'demo@example.com' && password === 'password123') {
             navigate('/main');
         } else {
@@ -23,7 +22,6 @@ const LoginForm = () => {
         }
     };
 
-    // Render
     return (
         <div>
             <h2>Login</h2>

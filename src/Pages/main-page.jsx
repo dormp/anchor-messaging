@@ -1,6 +1,6 @@
 // Main messenging interface where user can send and receive messages (eventually from different platforms too)
+//multiple systems need work, read unread messages dont quite work, and the data refreshing should work instantaneously
 
-// Imports
 import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import axios from 'axios';
 import * as styles from './MainPageStyles';
@@ -79,7 +79,7 @@ const MainPage = () => {
                 return uniqueMessages;
             });
 
-            // Update unread message count
+            // Update unread message count (logic does not quite work yet, needs work)
             const newUnreadMessages = {};
             newMessages
                 .filter(msg => msg.sender.id !== 'me' && !msg.read)
@@ -105,7 +105,7 @@ const MainPage = () => {
         }
     };
 
-    // Message Read Status
+    // Message Read Status (this could be faulty too)
     const markContactAsRead = async (contactId) => {
         try {
             await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/mark-messages-read`, {
@@ -129,7 +129,7 @@ const MainPage = () => {
         setSelectedContact(null);
     };
 
-    // Data Refresh
+    // Data Refresh (dont like this system, perhaps find an alternative)
     useEffect(() => {
         fetchChats();
         fetchMessages();
@@ -161,7 +161,7 @@ const MainPage = () => {
         window.location.reload();
     };
 
-    // Component Rendering
+    //rendering
     return (
         <div style={styles.pageStyle}>
             {/* Logo in upper left*/}
@@ -235,11 +235,9 @@ const MainPage = () => {
                     )}
                 </div>
 
-                {/* Settings */}
                 <BottomSettings />
             </div>
 
-            {/* Error Display */}
             {error && (
                 <div style={styles.errorStyle}>
                     {error}

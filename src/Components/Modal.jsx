@@ -1,6 +1,5 @@
 //basic reusable modal component
 
-// Imports
 import React from 'react';
 
 const Modal = ({ isOpen, onClose, children }) => {

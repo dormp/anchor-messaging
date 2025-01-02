@@ -1,6 +1,5 @@
 // Bottom bar componenet for sending messages
 
-// Imports
 import React, { useState } from 'react';
 import { Paperclip } from 'lucide-react';
 import EmojiPicker from 'emoji-picker-react';
@@ -16,7 +15,7 @@ const MessageInput = ({
     const [showEmojiPicker, setShowEmojiPicker] = useState(false);
     const [currentEmoji, setCurrentEmoji] = useState('😊');
 
-    // Emoji Configuration
+    // Emoji list
     const hoverEmojis = [
         '😂', '😍', '🤔', '😎', '🤪', '😇', 
         '🥳', '🤨', '😱', '🤯', '😴', '🤓'
@@ -52,7 +51,6 @@ const MessageInput = ({
         setShowEmojiPicker(false);
     };
 
-    // Render
     return (
         <div style={styles.messageInputContainerStyle}>
             <input

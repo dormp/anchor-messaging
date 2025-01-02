@@ -1,6 +1,5 @@
 // Signup compoment seen in the starter/landing page
 
-// Imports
 import React, { useState } from 'react';
 
 const SignUpForm = () => {
@@ -21,7 +20,6 @@ const SignUpForm = () => {
         }
     };
 
-    // Render
     return (
         <div>
             <h2>Sign Up</h2>
@@ -66,6 +64,7 @@ const SignUpForm = () => {
     );
 };
 
+//styles
 const inputStyle = {
     width: '100%',
     padding: '10px',

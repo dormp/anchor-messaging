@@ -41,7 +41,7 @@ const ChatSidebar = ({
 
     return (
         <div style={styles.contactsContainerStyle}>
-            {/* Add Chats */}
+            {/* Add the Chats */}
             <div style={styles.topBarStyle}>
                 <div style={{
                     display: 'flex',
@@ -147,7 +147,7 @@ const ChatItem = ({
             )}
             onClick={onSelect}
         >
-            {/* Contact profile picture */}
+            {/* profile picturse */}
             <div style={styles.contactProfileWrapper}>
                 {chat.profile_pic ? (
                     <img
@@ -181,7 +181,7 @@ const ChatItem = ({
                 )}
             </div>
 
-            {/* Contact info and last message */}
+            {/* Contact info and the most recent message */}
            <div style={styles.contactInfoStyle}>
                 <div
                     style={{

@@ -1,6 +1,5 @@
 //Component where all the text messages go, includes the text input bar, emojis, and file upload button, but file upload dont work yet
 
-// Imports 
 import React, { useState, useMemo, useCallback, useRef, useEffect } from 'react';
 import * as styles from '../Pages/MainPageStyles';
 import { ChevronUp, ChevronDown } from 'lucide-react';
@@ -194,7 +193,7 @@ const AsciiBackground = () => {
           setCurrentSearchIndex(newIndex);
       };
   
-      // Render
+      // full Render
       return (
           <div style={{...styles.messagesContainerStyle, position: 'relative'}}>
               {searchTerm && searchResults.length > 0 && (
