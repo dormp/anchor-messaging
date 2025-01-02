@@ -155,7 +155,6 @@ const ChatHeader = ({
                         </div>
                     </div>
                 </div>
-                
                 {/* Searching section */}
                 <div style={{
                     display: 'flex', 
